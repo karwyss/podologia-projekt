@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="%PUBLIC_URL%/footsteps.png" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#8A6E5B" />
+    
+    <!-- Meta tags dla SEO - POPRAWIONE -->
+    <meta name="description" content="PO PROSTU Podologia & Kosmetyka w Wadowicach - profesjonalne zabiegi podologiczne, pedicure, manicure, stylizacja rzęs i brwi. Umów wizytę online!" />
+    <meta name="keywords" content="podologia Wadowice, kosmetyka Wadowice, pedicure, manicure, zabiegi stóp, stylizacja rzęs, laminacja brwi, podolog, kosmetyczka, Wadowice 34-100" />
+    <meta name="author" content="PO PROSTU Podologia & Kosmetyka" />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://poprostu-podologia.pl" />
+    
+    <!-- Open Graph tags dla social media -->
+    <meta property="og:title" content="PO PROSTU Podologia & Kosmetyka - Profesjonalna pielęgnacja stóp i urody | Wadowice" />
+    <meta property="og:description" content="Specjalistyczne zabiegi podologiczne i kosmetyczne w Wadowicach. Umów wizytę online już teraz! Tel: 514 543 514" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://poprostu-podologia.pl" />
+    <meta property="og:image" content="%PUBLIC_URL%/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="pl_PL" />
+    <meta property="og:site_name" content="PO PROSTU Podologia & Kosmetyka" />
+    
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="PO PROSTU Podologia & Kosmetyka - Wadowice" />
+    <meta name="twitter:description" content="Profesjonalne zabiegi podologiczne i kosmetyczne. Zadzwoń: 514 543 514" />
+    <meta name="twitter:image" content="%PUBLIC_URL%/twitter-card.jpg" />
+    
+    <!-- Title strony - ZOPTYMALIZOWANY -->
+    <title>PO PROSTU Podologia & Kosmetyka Wadowice | Zabiegi stóp, manicure, pedicure</title>
+    
+    <!-- Manifest dla PWA -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    
+    <!-- Preload ważnych zasobów -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" as="style">
+    
+    <!-- Fonty Google - ZOPTYMALIZOWANE -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'brand': {
+                50: '#F8F3EF',
+                100: '#F0E6DE',
+                200: '#E1CCBD',
+                300: '#D2B39C',
+                400: '#C3997B',
+                500: '#B5805A',
+                600: '#8A6E5B',
+                700: '#5D4037',
+                800: '#402E28',
+                900: '#231B19',
+              }
+            },
+            fontFamily: {
+              'sans': ['Inter', 'system-ui', 'sans-serif'],
+              'serif': ['Playfair Display', 'serif'],
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.5s ease-in-out',
+              'slide-up': 'slideUp 0.3s ease-out',
+              'slide-down': 'slideDown 0.3s ease-out',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              slideUp: {
+                '0%': { transform: 'translateY(10px)', opacity: '0' },
+                '100%': { transform: 'translateY(0)', opacity: '1' },
+              },
+              slideDown: {
+                '0%': { transform: 'translateY(-10px)', opacity: '0' },
+                '100%': { transform: 'translateY(0)', opacity: '1' },
+              },
+            },
+          }
+        }
+      }
+    </script>
+    
+    <!-- Globalne style - ZOPTYMALIZOWANE -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+          'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+          sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        overflow-x: hidden;
+        background-color: #F8F3EF;
+        color: #5A4A42;
+      }
+      
+      /* Critical CSS - ładowane natychmiast */
+      #root {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      
+      ::-webkit-scrollbar-track {
+        background: #F8F3EF;
+      }
+      
+      ::-webkit-scrollbar-thumb {
+        background: #8A6E5B;
+        border-radius: 5px;
+      }
+      
+      ::-webkit-scrollbar-thumb:hover {
+        background: #5D4037;
+      }
+      
+      /* Selection color */
+      ::selection {
+        background-color: #D4B7A1;
+        color: #5D4037;
+      }
+      
+      /* Smooth scrolling */
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 80px; /* dla sticky header */
+      }
+      
+      /* Focus styles */
+      :focus-visible {
+        outline: 2px solid #8A6E5B;
+        outline-offset: 2px;
+      }
+      
+      /* Hide number input spinners */
+      input[type=number]::-webkit-outer-spin-button,
+      input[type=number]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+      
+      input[type=number] {
+        -appearance: textfield;
+      }
+      
+      /* Lazy loading dla obrazów */
+      img {
+        content-visibility: auto;
+      }
+      
+      /* Loading animation */
+      @keyframes pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.5; }
+      }
+      
+      .loading-pulse {
+        animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Loading screen -->
+    <noscript>
+      <div style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #F8F3EF;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        padding: 20px;
+        text-align: center;
+      ">
+        <h1 style="
+          color: #5D4037;
+          font-size: 2rem;
+          margin-bottom: 1rem;
+          font-weight: 700;
+        ">PO PROSTU Podologia & Kosmetyka</h1>
+        <p style="
+          color: #8A6E5B;
+          font-size: 1.2rem;
+          max-width: 600px;
+          line-height: 1.6;
+        ">
+          Aby korzystać z naszej strony, musisz włączyć JavaScript w swojej przeglądarce.
+          Strona oferuje rezerwację online, przeglądanie usług oraz kontakt z naszym gabinetem.
+        </p>
+        <p style="
+          color: #5D4037;
+          margin-top: 2rem;
+          font-weight: 500;
+        ">
+          Zadzwoń do nas: <strong style="color: #8A6E5B;">514 543 514</strong><br>
+          al. Matki Bożej Fatimskiej 33, 34-100 Wadowice
+        </p>
+        <p style="
+          color: #5D4037;
+          margin-top: 1rem;
+          font-size: 0.9rem;
+        ">
+          Pon-Śr: 7:30-19:00 | Czw-Pt: 7:30-13:00
+        </p>
+      </div>
+    </noscript>
+    
+    <!-- Initial loading state -->
+    <div id="initial-loading" style="
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #F8F3EF;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 9998;
+      transition: opacity 0.3s;
+    ">
+      <div style="
+        width: 80px;
+        height: 80px;
+        border: 4px solid #D4B7A1;
+        border-top: 4px solid #8A6E5B;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin-bottom: 20px;
+      "></div>
+      <p style="color: #5D4037; font-weight: 500;">Ładowanie strony...</p>
+    </div>
+    
+    <div id="root"></div>
+    
+    <!-- Structured Data for SEO - POPRAWIONE -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "HealthAndBeautyBusiness",
+          "@id": "https://poprostu-podologia.pl/#business",
+          "name": "PO PROSTU Podologia & Kosmetyka",
+          "image": "https://poprostu-podologia.pl/logo.png",
+          "description": "Profesjonalne zabiegi podologiczne i kosmetyczne w Wadowicach. Specjalizujemy się w pielęgnacji stóp, manicure, pedicure, stylizacji rzęs i brwi.",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "aleja Matki Bożej Fatimskiej 33",
+            "addressLocality": "Wadowice",
+            "postalCode": "34-100",
+            "addressCountry": "PL",
+            "addressRegion": "Małopolskie"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "49.8833",
+            "longitude": "19.4833"
+          },
+          "url": "https://poprostu-podologia.pl",
+          "telephone": "+48514543514",
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday"],
+              "opens": "07:30",
+              "closes": "19:00"
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Thursday", "Friday"],
+              "opens": "07:30",
+              "closes": "13:00"
+            }
+          ],
+          "priceRange": "80-250 PLN",
+          "serviceType": "Podologia, Kosmetyka",
+          "areaServed": {
+            "@type": "GeoCircle",
+            "geoMidpoint": {
+              "@type": "GeoCoordinates",
+              "latitude": "49.8833",
+              "longitude": "19.4833"
+            },
+            "geoRadius": "20000"
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://poprostu-podologia.pl/#website",
+          "url": "https://poprostu-podologia.pl",
+          "name": "PO PROSTU Podologia & Kosmetyka",
+          "description": "Strona gabinetu podologicznego i kosmetycznego w Wadowicach",
+          "publisher": {
+            "@id": "https://poprostu-podologia.pl/#business"
+          },
+          "potentialAction": [{
+            "@type": "SearchAction",
+            "target": "https://poprostu-podologia.pl/?s={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }],
+          "inLanguage": "pl-PL"
+        },
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://poprostu-podologia.pl/#localbusiness",
+          "parentOrganization": {
+            "@id": "https://poprostu-podologia.pl/#business"
+          },
+          "name": "PO PROSTU Podologia & Kosmetyka",
+          "currenciesAccepted": "PLN",
+          "paymentAccepted": "Cash, Credit Card, Blik"
+        }
+      ]
+    }
+    </script>
+    
+    <!-- Schema dla usług -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "Service",
+          "name": "Opracowanie podeszwy stóp",
+          "description": "Profesjonalne oczyszczenie i pielęgnacja podeszwy stóp",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "PO PROSTU Podologia & Kosmetyka"
+          },
+          "areaServed": "Wadowice i okolice",
+          "price": "80 PLN"
+        },
+        {
+          "@type": "Service",
+          "name": "Usuwanie odcisków/modzeli",
+          "description": "Bezbolesne usuwanie zgrubień skórnych",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "PO PROSTU Podologia & Kosmetyka"
+          },
+          "areaServed": "Wadowice i okolice",
+          "price": "100 PLN"
+        },
+        {
+          "@type": "Service",
+          "name": "Terapia brodawek wirusowych",
+          "description": "Leczenie brodawek metodą bezpieczną i skuteczną",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "PO PROSTU Podologia & Kosmetyka"
+          },
+          "areaServed": "Wadowice i okolice",
+          "price": "120 PLN"
+        }
+      ]
+    }
+    </script>
+    
+    <!-- Inline script dla lepszego SEO -->
+    <script>
+      // Usuń loading screen gdy React się załaduje
+      window.addEventListener('load', function() {
+        var loading = document.getElementById('initial-loading');
+        if (loading) {
+          loading.style.opacity = '0';
+          setTimeout(function() {
+            loading.style.display = 'none';
+          }, 300);
+        }
+      });
+      
+      // Styl dla spinnera
+      var style = document.createElement('style');
+      style.textContent = '@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }';
+      document.head.appendChild(style);
+      
+      // Ukryj noscript jeśli JS działa
+      document.addEventListener('DOMContentLoaded', function() {
+        var noscript = document.querySelector('noscript');
+        if (noscript) {
+          noscript.style.display = 'none';
+        }
+      });
+      
+      // Przechwyć błędy dla analytics
+      window.addEventListener('error', function(e) {
+        console.error('JavaScript Error:', e.error);
+      });
+    </script>
+  </body>
+</html>
