@@ -13,7 +13,7 @@ export default defineConfig({
     outDir: '../dist',   // wyjdzie z src do root/dist
     sourcemap: false,
     rollupOptions: {
-      input: 'index.jsx',  // względnie do root czyli ./src/index.jsx
+      // input: 'index.jsx',  // względnie do root czyli ./src/index.jsx
       output: {
         manualChunks: {
           vendor: ['react', 'react-dom'],
