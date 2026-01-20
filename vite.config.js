@@ -11,7 +11,7 @@ export default defineConfig({
   ],
   base: './',  // Ważne dla deploymentu
   build: {
-    outDir: '../dist',
+    outDir: 'dist',
     sourcemap: false,
     rollupOptions: {
       input: '/src/index.jsx',
